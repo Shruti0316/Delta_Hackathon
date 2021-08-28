@@ -1,0 +1,67 @@
+<style>
+    #ff{
+        margin-left: 260px;
+        text-align: center;
+    }
+    input{
+        margin: 8px;
+        margin-left: 15px;
+    }
+    #btn{
+        border: none;
+        background-color: teal;
+        color: white;
+        font-weight: bold;
+        border-radius: 5px;
+    }
+    .del{
+        border: none;
+        padding: 10px;
+        color: white;
+        background-color: red;
+    }
+</style>
+<%- include('./partials/sidebar'); %>
+<form id="ff" method="POST" action="/model">
+    <div id="fff">
+    <input type="text" name="schema" placeholder="Schema Name"><br>
+    <input class="btn" type="button" value="+" onclick="fun()">
+    <br>
+    <input type="text" name="key" placeholder="Key">
+    <input type="text" name="type" placeholder="Type">
+    <input type="text" name="value" placeholder="Value">
+    <input type="button" value="Delete" class="del">
+    <br>
+    </div>
+    <input class="btn" type="submit" value="SAVE">
+
+</form>
+<script>
+    function fun(){
+    var f = document.getElementById("fff");
+    var input1 = document.createElement("input");
+    var input2 = document.createElement("input");
+    var input3 = document.createElement("input");
+    var btn = document.createElement("BUTTON");   
+    btn.classList.add("del");
+    btn.innerHTML = "Delete";                   
+    
+    input1.type="text";
+    input1.name="key";
+    input1.placeholder="Key";
+    f.appendChild(input1);
+    f.appendChild(btn); 
+    input2.type="text";
+    input2.name="key";
+    input2.placeholder="Type";
+    f.appendChild(input2);
+    f.appendChild(btn); 
+    input3.type="text";
+    input3.name="value";
+    input3.placeholder="Value";
+    f.appendChild(input3);
+    f.appendChild(btn); 
+    var linebreak = document.createElement("br")
+    f.appendChild(linebreak);
+    }
+    </script>

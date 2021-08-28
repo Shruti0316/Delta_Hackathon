@@ -1,0 +1,50 @@
+<style>
+    body{
+        margin: 0;
+        background-color: rgb(218, 218, 218);
+    }
+    #sidebar{
+        text-align: center;
+        width:250px;
+        height: 100%;
+        background-color: rgba(255, 172, 223, 0.5);
+        border-right: 2px grey solid;
+        position: absolute;
+    }
+    #user{
+        text-align: center;
+        padding: 15px;
+        font-size: 30px;
+    }
+    .btn{
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 5px;
+        background: teal;
+        padding: 10px;
+        cursor: pointer;
+        margin:10px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    a{
+        text-decoration: none;
+        color: white;
+        background-color: teal;
+        padding: 10px;
+    }
+</style>
+<div id="sidebar">
+    <div id="user"><%=user %></div>
+    <form method="POST" action="/serve">
+        <input type="text" name="server" placeholder="Server Name" style="width: 85%;">
+        <input type="submit" name="" value="Create Server" class="btn">
+    </form>
+    <form method="POST" action="/schema">
+        <input type="submit" name="" value="Add New Schema" class="btn">
+    </form>
+    <input type="submit" name="" value="EXPORT DATA" class="btn">
+    <input type="submit" name="" value="IMPORT DATA" class="btn"><br><br>    
+    <a href="/">LOGOUT</a>
+</div>
